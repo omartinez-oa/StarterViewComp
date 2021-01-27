@@ -1,0 +1,14 @@
+**/bin
+**/obj
+**/.vs
+**/NugetPackages
+**/*.user
+**/EntityGenerator/*.cs
+**/*.svclog
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+/src/HealthAndCare/ProductResources/Core/Toolbar/desktop.ini
+src/CorePlatform/Integrations/CareDirector.API/App_Data/XmlDocument.xml
+CareDirector.API.Core.XML
