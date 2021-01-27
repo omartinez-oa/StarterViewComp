@@ -21,16 +21,18 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsDone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Priority)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            </tr>
-    }
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsDone)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Priority)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+</tr>}
 </table>
+<div>
+    @await Component.InvokeAsync("PriorityList", new { maxPriority = 2, isDone = false })
+</div>
