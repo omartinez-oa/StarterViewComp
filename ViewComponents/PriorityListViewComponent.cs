@@ -21,8 +21,14 @@ namespace StarterViewComp.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync(
         int maxPriority, bool isDone)
         {
+            string myView = "Default";
+            if (maxPriority > 3 && isDone)
+            {
+                myView = "PVC";
+            }
+
             List<TodoItem> items = await GetItemsAsync(maxPriority, isDone);
-            return View(items);
+            return View(myView, items);
         }
         private Task<List<TodoItem>> GetItemsAsync(int maxPriority, bool isDone)
         {
