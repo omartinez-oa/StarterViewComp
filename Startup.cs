@@ -13,7 +13,13 @@ namespace ViewComponentSample
         {
             services.AddDbContext<ToDoContext>(options =>
                   options.UseInMemoryDatabase("db"));
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddMvc()
+                .AddRazorOptions(options => 
+                { 
+                    options.ViewLocationFormats.Add("/Pages/{0}.cshtml"); 
+                })
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -29,7 +35,7 @@ namespace ViewComponentSample
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Todo}/{action=Index}/{id?}");
+                    template: "{controller=Todo}/{action=IndexVC}/{id?}");
             });
         }
     }

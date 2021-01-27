@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ViewComponentSample.Models;
 
-namespace StarterViewComp.ViewComponents
+namespace StarterViewComp.Pages.Components.PriorityList
 {
     public class PriorityListViewComponent : ViewComponent
     {

@@ -22,9 +22,10 @@ namespace ViewComponentSample.Controllers
             var model = _ToDoContext.ToDo.ToList();
             return View(model);
         }
-        public string Index2()
+
+        public IActionResult IndexVC()
         {
-            return "View()";
+            return ViewComponent("PriorityList", new { maxPriority = 3, isDone = false });
         }
     }
 }
