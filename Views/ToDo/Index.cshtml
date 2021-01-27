@@ -1,5 +1,6 @@
 ﻿
 @using ViewComponentSample.Models
+@addTagHelper *, StarterViewComp
 @model IEnumerable<TodoItem>
 
 
@@ -34,5 +35,6 @@
 </tr>}
 </table>
 <div>
-    @await Component.InvokeAsync("PriorityList", new { maxPriority = 4, isDone = true })
+    @*@await Component.InvokeAsync("PriorityList", new { maxPriority = 3, isDone = false })*@
+    <vc:priority-list max-priority="10" is-done="false"></vc:priority-list>
 </div>
